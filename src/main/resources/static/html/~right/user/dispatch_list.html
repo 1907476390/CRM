@@ -1,0 +1,155 @@
+﻿
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+ 
+<title>jb-aptech毕业设计项目</TITLE>
+<meta name="renderer" content="ie-comp">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="../../css/style.css" rel="stylesheet" type="text/css">
+<script src="script/common.js"></script>
+<script src="script/validate.js"></script>
+		<link rel="stylesheet" type="text/css" href="ExtJS/resources/css/ext-all.css">
+<script type="text/javascript" src="ExtJS/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="ExtJS/ext-all.js"></script>
+</head>
+  <script type="text/javascript">
+  	function mySearch(){
+  				var arrName=new Array();
+				arrName[0]="usrName";
+				checkWay(arrName);
+  			document.sysUserForm.submit();
+  		}
+  </script>
+  <body>
+    <div class="page_title">权限管理 > 用户管理 > 分配角色</div>
+    	<div class="button_bar">
+	   		<button class="common_button" onclick="help();">帮助</button>
+			<button class="common_button" onclick="mySearch();">查询</button>
+	   	</div>
+	   	 <form name="sysUserForm" method="post" action="/CRM/sysUser.do">
+   			 <input type="hidden" name="method" value="toDispatchList">
+	   	<table class="query_form_table">
+	   		<tr>
+	   			<th>
+	   				用户名
+	   			</th>
+	   			<td>
+	   				<input type="text" name="sysUser.usrName" size="20" value="" id="usrName">
+	   			</td>
+	   			<th>
+	   				是否禁用
+	   			</th>
+	   			<td>
+	   				<select name="sysUser.usrFlag"><option value="1">正常</option></select>
+	   			</td>
+	   		</tr>
+	   	</table>
+	  
+	   	<br/>
+	   	<table class="data_list_table">
+	   		<tr>
+	   			<th>编号</th>
+	   			<th>用户名</th>
+	   			<th>角色</th>
+	   			<th>状态</th>
+	   			<th>操作</th>
+	   		</tr>
+	   		
+	   		
+	   		<tr>
+	   			<td class="list_data_text">2</td>
+	   			<td class="list_data_text">hlliu</td>
+	   			<td class="list_data_text">管理员</td>
+	   			<td class="list_data_text">
+	   				
+	   					正常
+	   				
+	   				
+	   			</td>
+	   			<td class="list_data_op">
+	   				<img onclick="to('sysUser.do?method=toDispatch&userId=2');" title="指派" src="images/bt_linkman.gif" class="op_button" />
+	   			</td>
+	   		</tr>
+	   		
+	   		<tr>
+	   			<td class="list_data_text">4</td>
+	   			<td class="list_data_text">sharme</td>
+	   			<td class="list_data_text">管理员</td>
+	   			<td class="list_data_text">
+	   				
+	   					正常
+	   				
+	   				
+	   			</td>
+	   			<td class="list_data_op">
+	   				<img onclick="to('sysUser.do?method=toDispatch&userId=4');" title="指派" src="images/bt_linkman.gif" class="op_button" />
+	   			</td>
+	   		</tr>
+	   		
+	   		<tr>
+	   			<td class="list_data_text">24</td>
+	   			<td class="list_data_text">jdss</td>
+	   			<td class="list_data_text">销售员</td>
+	   			<td class="list_data_text">
+	   				
+	   					正常
+	   				
+	   				
+	   			</td>
+	   			<td class="list_data_op">
+	   				<img onclick="to('sysUser.do?method=toDispatch&userId=24');" title="指派" src="images/bt_linkman.gif" class="op_button" />
+	   			</td>
+	   		</tr>
+	   		
+	   		<tr>
+	   			<td class="list_data_text">25</td>
+	   			<td class="list_data_text">yaomiwang</td>
+	   			<td class="list_data_text">销售主管</td>
+	   			<td class="list_data_text">
+	   				
+	   					正常
+	   				
+	   				
+	   			</td>
+	   			<td class="list_data_op">
+	   				<img onclick="to('sysUser.do?method=toDispatch&userId=25');" title="指派" src="images/bt_linkman.gif" class="op_button" />
+	   			</td>
+	   		</tr>
+	   		
+	   		<tr>
+	   			<td class="list_data_text">26</td>
+	   			<td class="list_data_text">sharme.Yao</td>
+	   			<td class="list_data_text">高管</td>
+	   			<td class="list_data_text">
+	   				
+	   					正常
+	   				
+	   				
+	   			</td>
+	   			<td class="list_data_op">
+	   				<img onclick="to('sysUser.do?method=toDispatch&userId=26');" title="指派" src="images/bt_linkman.gif" class="op_button" />
+	   			</td>
+	   		</tr>
+	   		
+	   		<tr>
+		<th colspan="7" class="pager">
+<div class="pager">
+	每页5条记录&nbsp;共6条记录&nbsp;&nbsp;第1页&nbsp;&nbsp;共2页&nbsp;&nbsp;<a disabled>首页</a><a  disabled>上一页</a><a  href="javaScript:window.location='?curpage=2&pageNum=5&userId=4&method=toDispatchList'">下一页</a><a href="javaScript:window.location='?curpage=2&pageNum=5&userId=4&method=toDispatchList'">尾页</a>&nbsp;&nbsp;&nbsp;&nbsp;转到：<select id='_gotoPageCount' onchange="window.location='?curpage='+this.value+'&pageNum=5&userId=4&method=toDispatchList'"><option  selected  value=1 >第1页</option>
+<option  value=2 >第2页</option>
+</select>&nbsp;&nbsp;&nbsp;&nbsp;<select onchange="window.location='?pageNum='+this.value+'&userId=4&method=toDispatchList'">
+<option  value=6 >每页6条记录</option>
+<option  value=12 >每页12条记录</option>
+<option  value=18 >每页18条记录</option>
+<option  value=24 >每页24条记录</option>
+<option  value=30 >每页30条记录</option>
+</select>
+</div>
+		</th>
+	</tr>
+	   	</table>
+    </form>
+  </body>
+</html>
+

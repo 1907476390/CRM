@@ -1,0 +1,59 @@
+﻿<HTML>
+<HEAD>
+<TITLE>客户关系管理系统</TITLE>
+<meta name="renderer" content="ie-comp">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="StyleSheet" href="dtree.css" type="text/css" />
+<style type="text/css">
+body {
+	background-color: #0066CC;
+}
+body,td,th ,a  {
+	color: #FFFFFF;
+}
+</style>
+<script type="text/javascript" src="dtree.js"></script>
+</HEAD>
+<body><br/>
+<script type="text/javascript">
+		<!--
+
+		d = new dTree('d');
+
+		d.add(0,-1,'客户关系管理系统');
+		d.add(1,0,'营销管理');
+		d.add(2,0,'客户管理');
+		d.add(3,0,'服务管理');
+		d.add(4,0,'统计报表');
+		d.add(5,0,'基础数据');
+		d.add(6,0,'权限管理');
+		d.add(7	,1,		'销售机会管理','~sale/list.html','销售机会管理','mainFrame');
+		d.add(8,	1,		'客户开发计划','~sale/dev.html','客户开发计划','mainFrame');
+		d.add(9	,2	,	'客户信息管理','~cust/cust/list.html','客户信息管理','mainFrame');
+		d.add(10,2,'客户流失管理','~cust/lost/list.html','客户流失管理','mainFrame');
+	d.add(11,	3, 	'服务创建	','~cust/service/add.html','服务创建','mainFrame');
+	d.add(12,	3,		'服务分配	','~cust/service/dispatch.html','服务分配','mainFrame');
+	d.add(13,	3,		'服务处理	','~cust/service/deal.html','服务处理','mainFrame');
+	d.add(14,	3,		'服务反馈	','~cust/service/feedback.html','服务反馈','mainFrame');
+	d.add(15,	3,		'服务归档	','~cust/service/arch.html','服务归档','mainFrame');
+	d.add(16,	4,		'客户贡献分析','~rept/contr.html','客户贡献分析','mainFrame');
+	d.add(17,	4,		'客户构成分析','~rept/cons.html','客户构成分析','mainFrame');
+	d.add(18,	4,		'客户服务分析	','~rept/ser.html','客户服务分析','mainFrame');
+	d.add(19,	4,		'客户流失分析','~rept/lost.html','客户流失分析','mainFrame');
+
+	d.add(20,	5,		'数据字典管理','~basd/dict.html','数据字典管理','mainFrame');
+	d.add(21,	5,		'查询产品信息','~basd/product.html','查询产品信息','mainFrame');
+	d.add(22,	5,		'查询库存	','~basd/storage.html','查询库存','mainFrame');
+	d.add(23,	6,		'用户管理	','~right/user/list.html','用户管理','mainFrame');
+	d.add(24,	6,		'角色管理	','~right/role/list.html','角色管理','mainFrame');
+d.add(25,	6,		'角色权限','~right/right/list.html','角色权限','mainFrame');
+
+ document.write(d);
+ -->
+	</script>
+
+</BODY>
+</NOSCRIPT>
+
+</HTML>

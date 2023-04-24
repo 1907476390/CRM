@@ -1,0 +1,417 @@
+﻿
+ 
+ 
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		
+		<title>jb-aptech毕业设计项目</TITLE>
+<meta name="renderer" content="ie-comp">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="../../css/style.css" rel="stylesheet" type="text/css">
+		<script src="../../script/common.js"></script>
+		<script src="../../script/validate.js"></script>
+<link rel="stylesheet" type="text/css" href="ExtJS/resources/css/ext-all.css">
+<script type="text/javascript" src="ExtJS/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="ExtJS/ext-all.js"></script>
+	</head>
+	<script type="text/javascript">
+		function myAdd(){
+			document.sysRightForm.submit();
+		}
+	</script>
+	<body>
+		<div class="page_title">
+			权限管理 > 权限管理 > 权限查询
+		</div>
+		
+		<form name="sysRightForm" method="post" action="/CRM/sysRight.do?method=searchSysRight">
+			
+			<div class="button_bar">
+				<button class="common_button" onclick="help('');">
+					帮助
+				</button>  
+				<button class="common_button" onclick="myAdd();">
+					查询
+				</button>
+			</div>
+			<table class="query_form_table">
+				<tr>
+					<th>
+						权限文本
+					</th>
+					<td>
+						<input type="text" name="sysRight.rightText" value="">
+					</td>
+					<th>
+						权限描述
+					</th>
+					<td>
+						<input type="text" name="sysRight.rightTip" value="">
+					</td>
+					<th>
+						权限类型
+					</th>
+					<td>
+						<select name="sysRight.rightType"><option value="">--请选择父节点--</option>
+							<option value=""></option>
+<option value="L01">营销管理</option>
+<option value="L0101">销售机会管理</option>
+<option value="L0102">客户开发计划</option>
+<option value="L02">客户管理</option>
+<option value="L0201">客户信息管理</option>
+<option value="L0202">客户流失管理</option>
+<option value="L03">服务管理</option>
+<option value="L0301">服务创建</option>
+<option value="L0302">服务分配</option>
+<option value="L0303">服务处理</option>
+<option value="L0304">服务反馈</option>
+<option value="L0305">服务归档</option>
+<option value="L04">统计报表</option>
+<option value="L0401">客户贡献分析</option>
+<option value="L0402">客户构成分析</option>
+<option value="L0403">客户服务分析</option>
+<option value="L0404">客户流失分析</option>
+<option value="L05">基础数据</option>
+<option value="L0501">数据字典管理</option>
+<option value="L0502">查询产品信息</option>
+<option value="L0503">查询库存</option>
+<option value="L06">权限管理</option>
+<option value="L0601">用户管理</option>
+<option value="L0602">角色管理</option>
+<option value="L0603">权限信息管理</option></select>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<table class="query_form_table">
+				<tr>
+					<th>
+						权限编号
+					</th>
+					<th>
+						权限文本
+					</th>
+					<th>
+						权限父节点
+					</th>
+					<th>
+						权限类型
+					</th>
+					<th>
+						权限描述
+					</th>
+					<th>
+						权限操作
+					</th>
+				</tr>
+				
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+							
+						</td>
+						<td>
+							L06
+						</td>
+						<td>
+							Document
+						</td>
+						<td>
+							
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img 
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('','sysRight.do?method=toDeleteSysRight&rightId=');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L01
+						</td>
+						<td>
+							营销管理
+						</td>
+						<td>
+							ROOT_MENU
+						</td>
+						<td>
+							Folder
+						</td>
+						<td>
+							营销管理
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L01');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('营销管理','sysRight.do?method=toDeleteSysRight&rightId=L01');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L0101
+						</td>
+						<td>
+							销售机会管理
+						</td>
+						<td>
+							L01
+						</td>
+						<td>
+							Document
+						</td>
+						<td>
+							销售机会管理
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L0101');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('销售机会管理','sysRight.do?method=toDeleteSysRight&rightId=L0101');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L0102
+						</td>
+						<td>
+							客户开发计划
+						</td>
+						<td>
+							L01
+						</td>
+						<td>
+							Document
+						</td>
+						<td>
+							客户开发计划
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L0102');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('客户开发计划','sysRight.do?method=toDeleteSysRight&rightId=L0102');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L02
+						</td>
+						<td>
+							客户管理
+						</td>
+						<td>
+							ROOT_MENU
+						</td>
+						<td>
+							Folder
+						</td>
+						<td>
+							客户管理
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L02');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('客户管理','sysRight.do?method=toDeleteSysRight&rightId=L02');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L0201
+						</td>
+						<td>
+							客户信息管理
+						</td>
+						<td>
+							L02
+						</td>
+						<td>
+							Document
+						</td>
+						<td>
+							客户信息管理
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L0201');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('客户信息管理','sysRight.do?method=toDeleteSysRight&rightId=L0201');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L0202
+						</td>
+						<td>
+							客户流失管理
+						</td>
+						<td>
+							L02
+						</td>
+						<td>
+							Document
+						</td>
+						<td>
+							客户流失管理
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L0202');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('客户流失管理','sysRight.do?method=toDeleteSysRight&rightId=L0202');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L03
+						</td>
+						<td>
+							服务管理
+						</td>
+						<td>
+							ROOT_MENU
+						</td>
+						<td>
+							Folder
+						</td>
+						<td>
+							服务管理
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L03');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('服务管理','sysRight.do?method=toDeleteSysRight&rightId=L03');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L0301
+						</td>
+						<td>
+							服务创建
+						</td>
+						<td>
+							L03
+						</td>
+						<td>
+							Document
+						</td>
+						<td>
+							服务创建
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L0301');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('服务创建','sysRight.do?method=toDeleteSysRight&rightId=L0301');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+					<tr>
+						<td>
+							L0302
+						</td>
+						<td>
+							服务分配
+						</td>
+						<td>
+							L03
+						</td>
+						<td>
+							Document
+						</td>
+						<td>
+							服务分配
+						</td>
+						<td>
+							<img
+								onclick="location='edit.html'"
+								title="编辑" src="../../images/bt_edit.gif" class="op_button" />
+							<img
+								onclick="to('sysRight.do?method=toDetailSysRight&rightId=L0302');"
+								title="查看" src="../../images/bt_deal.gif" class="op_button" />
+							<img
+								onclick="mydel('服务分配','sysRight.do?method=toDeleteSysRight&rightId=L0302');"
+								title="删除" src="../../images/bt_del.gif" class="op_button" />
+						</td>
+					</tr>
+				
+				<tr>
+					<th colspan="7" class="pager">
+<div class="pager">
+	共26条记录 每页<input value="10" size="2" />条
+	第<input value="1" size="2"/>页/共3页
+	<a href="sysRight.do?method=rightForward&currentpage=1">第一页</a>
+	<a href="sysRight.do?method=rightForward&currentpage=1">上一页</a>
+	<a href="sysRight.do?method=rightForward&currentpage=2">下一页</a>
+	<a href="sysRight.do?method=rightForward&currentpage=3">最后一页</a>
+	转到<input value="1" size="2" id="topage"/>页
+	<button onclick="myreload('sysRight.do?method=rightForward',3)">GO</button>
+</div>
+					</th>
+				</tr>
+			</table>
+</form>
+	</body>
+</html>

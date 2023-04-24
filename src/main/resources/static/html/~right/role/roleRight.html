@@ -1,0 +1,280 @@
+﻿
+ 
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		
+		<title>jb-aptech毕业设计项目</TITLE>
+<meta name="renderer" content="ie-comp">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link href="../../css/style.css" rel="stylesheet" type="text/css">
+		<script src="../../script/common.js"></script>
+		<script src="../../script/validate.js"></script>
+<script type="text/javascript"> 
+	function allch(code){
+		var temp = document.getElementById(code);
+		var rs = document.getElementsByName("sysRight");
+	//var rs=document.getElementsByTagName("sysRight");
+		if(temp.checked){
+			for(var i=0;i<rs.length;i++){
+				if(rs[i].id.substring(0,3)==code){	
+					rs[i].checked=true;
+				}
+			}			
+		}else{
+			for(var i=0;i<rs.length;i++){
+				if(rs[i].id.substring(0,3)==code){
+					rs[i].checked=false;
+				}
+			}
+		}		
+	}
+	function selSup(code){
+		var temps = document.getElementById(code);
+		if(temps.checked){
+			var sup = document.getElementById(code.substring(0,3));
+			sup.checked=true;
+		}else{
+			var rs = sysRoleForm["sysRight"];
+			var currRightId =code.substring(0,3);
+			var flag = true;
+			for(var i=0;i<rs.length;i++){
+				if(rs[i].id!=currRightId &&rs[i].id.substring(0,3)==currRightId){
+					if(rs[i].checked==true){
+						flag=false;//其中有子节点被选中
+					}
+				}
+			} 
+			if(flag){
+				document.getElementById(currRightId).checked=false;
+			}
+		}
+	}
+</script>
+	</head>
+  
+  <body>
+    <div class="page_title">
+			权限管理 > 用户管理 > 系统角色管理 > 权限分配
+	</div>
+	<form name="sysRoleForm" method="post" action="/CRM/sysRole.do?roleId=9">
+		<input type="hidden" name="method" value="doAssignRights">
+		
+			<table class="query_form_table">
+				<tr>
+					<th>角色名</th>
+					<td>销售员</td>
+					<th>角色描述</th>
+					<td>销售产品人员</td>
+					<th>状态</th>
+					<td>正常</td>
+				</tr>
+				<tr>
+					<th>权限</th>
+					<td colspan="5" align="center">
+						<input type="reset" value="取消" class="common_button">
+						<input type="submit" value="保存" class="common_button">
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<table class="query_form_table">
+				
+					<tr><td>
+					
+					
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					 
+						<input type="checkbox" name="sysRight" value="" onclick="selSup('')" id="">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <hr>
+						 <div style="background-color:#CCCCCC;">
+						  &nbsp;&nbsp;&nbsp;营销管理
+						<input type="checkbox" name="sysRight" value="L01" checked="checked" onclick="allch('L01')" id="L01">
+					</div><br>
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;销售机会管理
+					 
+						<input type="checkbox" name="sysRight" value="L0101" checked="checked" onclick="selSup('L0101')" id="L0101">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户开发计划
+					 
+						<input type="checkbox" name="sysRight" value="L0102" onclick="selSup('L0102')" id="L0102">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <hr>
+						 <div style="background-color:#CCCCCC;">
+						  &nbsp;&nbsp;&nbsp;客户管理
+						<input type="checkbox" name="sysRight" value="L02" onclick="allch('L02')" id="L02">
+					</div><br>
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户信息管理
+					 
+						<input type="checkbox" name="sysRight" value="L0201" onclick="selSup('L0201')" id="L0201">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户流失管理
+					 
+						<input type="checkbox" name="sysRight" value="L0202" onclick="selSup('L0202')" id="L0202">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <hr>
+						 <div style="background-color:#CCCCCC;">
+						  &nbsp;&nbsp;&nbsp;服务管理
+						<input type="checkbox" name="sysRight" value="L03" onclick="allch('L03')" id="L03">
+					</div><br>
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务创建
+					 
+						<input type="checkbox" name="sysRight" value="L0301" onclick="selSup('L0301')" id="L0301">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务分配
+					 
+						<input type="checkbox" name="sysRight" value="L0302" onclick="selSup('L0302')" id="L0302">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务处理
+					 
+						<input type="checkbox" name="sysRight" value="L0303" onclick="selSup('L0303')" id="L0303">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务反馈
+					 
+						<input type="checkbox" name="sysRight" value="L0304" onclick="selSup('L0304')" id="L0304">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务归档
+					 
+						<input type="checkbox" name="sysRight" value="L0305" onclick="selSup('L0305')" id="L0305">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <hr>
+						 <div style="background-color:#CCCCCC;">
+						  &nbsp;&nbsp;&nbsp;统计报表
+						<input type="checkbox" name="sysRight" value="L04" onclick="allch('L04')" id="L04">
+					</div><br>
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户贡献分析
+					 
+						<input type="checkbox" name="sysRight" value="L0401" onclick="selSup('L0401')" id="L0401">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户构成分析
+					 
+						<input type="checkbox" name="sysRight" value="L0402" onclick="selSup('L0402')" id="L0402">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户服务分析
+					 
+						<input type="checkbox" name="sysRight" value="L0403" onclick="selSup('L0403')" id="L0403">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;客户流失分析
+					 
+						<input type="checkbox" name="sysRight" value="L0404" onclick="selSup('L0404')" id="L0404">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <hr>
+						 <div style="background-color:#CCCCCC;">
+						  &nbsp;&nbsp;&nbsp;基础数据
+						<input type="checkbox" name="sysRight" value="L05" checked="checked" onclick="allch('L05')" id="L05">
+					</div><br>
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数据字典管理
+					 
+						<input type="checkbox" name="sysRight" value="L0501" onclick="selSup('L0501')" id="L0501">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查询产品信息
+					 
+						<input type="checkbox" name="sysRight" value="L0502" checked="checked" onclick="selSup('L0502')" id="L0502">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;查询库存
+					 
+						<input type="checkbox" name="sysRight" value="L0503" checked="checked" onclick="selSup('L0503')" id="L0503">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <hr>
+						 <div style="background-color:#CCCCCC;">
+						  &nbsp;&nbsp;&nbsp;权限管理
+						<input type="checkbox" name="sysRight" value="L06" onclick="allch('L06')" id="L06">
+					</div><br>
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户管理
+					 
+						<input type="checkbox" name="sysRight" value="L0601" onclick="selSup('L0601')" id="L0601">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;角色管理
+					 
+						<input type="checkbox" name="sysRight" value="L0602" onclick="selSup('L0602')" id="L0602">
+					 	
+					 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;权限信息管理
+					 
+						<input type="checkbox" name="sysRight" value="L0603" onclick="selSup('L0603')" id="L0603">
+					 	
+					 
+					 </td>	
+					 </tr>			
+				
+			</table>
+	</form>
+  </body>
+</html>
