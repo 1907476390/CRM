@@ -34,4 +34,18 @@ public class SaleServiceImpl implements SaleService {
 
         return saleDAO.addSale(salChance);
     }
+
+    /**
+     * 查询客户经理
+     * @return
+     */
+    @Override
+    public List<Map> selManger() {
+        return saleDAO.selManger();
+    }
+
+    @Override
+    public SalChance selSaleById(Integer id) {
+        return saleDAO.selSaleById(id);
+    }
 }

@@ -41,14 +41,35 @@ public class SaleController {
 
     @RequestMapping("/add")
     public Result add(SalChance salChance){
-
         int i = service.addSale(salChance);
+
 
         if(i > 0){
             return  Result.ok();
         }else{
             return Result.fail("新增失败");
         }
+    }
+
+
+    @RequestMapping("/manger")
+    public Result selManger(){
+
+        //查询客户经理
+        List<Map> maps = service.selManger();
+
+        maps.forEach(System.out::println);
+
+        return Result.ok(maps);
+    }
+
+    @RequestMapping("/selSaleById")
+    public Result selSaleById(Integer chcId){
+
+        SalChance salChance = service.selSaleById(chcId);
+
+        return  Result.ok(salChance);
+
     }
 
 }
