@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "mybatis_mapper" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.crm.dao.SaleDAO">
+<select id="query" resultType="map">
+    select chc_id,chc_cust_name,chc_title,chc_linkman,chc_tel,chc_create_date from sal_chance
+    <where>
+        <if test="chc_cust_name != null and chc_cust_name !=''">
+            and chc_cust_name like concat("%",#{chcCustName},"%")
+        </if>
+<if test="chc_title !=null and chc_title !=''">
+    and chc_title like concat("%",#{chc_title},"%")
+</if>
+<if test="chc_linkman !=null and chc_linkman!=''">
+    and chc_linkman like concat("%",#{chcLinkman},"%")
+</if>
+    </where>
+</select>
+</mapper>
