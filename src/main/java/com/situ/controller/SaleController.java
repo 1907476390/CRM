@@ -1,15 +1,12 @@
-package com.crm.controller;
+package com.situ.controller;
 
-import com.crm.dto.Result;
-import com.crm.entity.SalChance;
-import com.crm.service.SaleService;
+import com.situ.dto.Result;
+import com.situ.entity.SalChance;
+import com.situ.service.SaleService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -40,36 +37,61 @@ public class SaleController {
     }
 
     @RequestMapping("/add")
-    public Result add(SalChance salChance){
+    public Result add(SalChance salChance) {
         int i = service.addSale(salChance);
 
 
-        if(i > 0){
-            return  Result.ok();
-        }else{
+        if (i > 0) {
+            return Result.ok();
+        } else {
             return Result.fail("新增失败");
         }
     }
 
 
     @RequestMapping("/manger")
-    public Result selManger(){
+    public Result selManger() {
 
         //查询客户经理
         List<Map> maps = service.selManger();
 
-        maps.forEach(System.out::println);
 
         return Result.ok(maps);
     }
 
-    @RequestMapping("/selSaleById")
-    public Result selSaleById(Integer chcId){
+    @RequestMapping("/selSaleById/{id}")
+    public Result selSaleById(@PathVariable Integer id) {
 
-        SalChance salChance = service.selSaleById(chcId);
+        SalChance salChance = service.selSaleById(id);
 
-        return  Result.ok(salChance);
+        return Result.ok(salChance);
 
     }
+
+    @RequestMapping("/update")
+    public Result update(SalChance salChance) {
+
+        int i = service.updateMeangers(salChance);
+
+        if (i > 0) {
+            return Result.ok();
+        } else {
+            return Result.fail("保存失败");
+        }
+    }
+
+    @RequestMapping("/updateSale")
+    public Result updateSale(SalChance salChance){
+
+        int i = service.updateSale(salChance);
+
+        if (i > 0){
+            return Result.ok();
+        }else {
+            return Result.fail("修改失败");
+        }
+
+    }
+
 
 }

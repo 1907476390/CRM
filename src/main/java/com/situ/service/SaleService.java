@@ -1,6 +1,6 @@
-package com.crm.service;
+package com.situ.service;
 
-import com.crm.entity.SalChance;
+import com.situ.entity.SalChance;
 
 import java.util.List;
 import java.util.Map;
@@ -15,4 +15,8 @@ public interface SaleService {
 
 
     SalChance selSaleById(Integer id);
+
+    int updateMeangers(SalChance salChance);
+
+    int updateSale(SalChance salChance);
 }

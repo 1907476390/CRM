@@ -1,4 +1,4 @@
-package com.crm.dto;
+package com.situ.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

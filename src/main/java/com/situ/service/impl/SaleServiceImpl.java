@@ -1,8 +1,8 @@
-package com.crm.service.impl;
+package com.situ.service.impl;
 
-import com.crm.dao.SaleDAO;
-import com.crm.entity.SalChance;
-import com.crm.service.SaleService;
+import com.situ.dao.SaleDAO;
+import com.situ.entity.SalChance;
+import com.situ.service.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,5 +47,25 @@ public class SaleServiceImpl implements SaleService {
     @Override
     public SalChance selSaleById(Integer id) {
         return saleDAO.selSaleById(id);
+    }
+
+    /**
+     * 设置指派人
+     * @param salChance
+     * @return
+     */
+    @Override
+    public int updateMeangers(SalChance salChance) {
+        return saleDAO.updateMeangers(salChance);
+    }
+
+    /**
+     * 修改销售机会
+     * @param salChance
+     * @return
+     */
+    @Override
+    public int updateSale(SalChance salChance) {
+        return saleDAO.updateSale(salChance);
     }
 }

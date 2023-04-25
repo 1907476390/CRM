@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "mybatis_mapper" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.crm.dao.SaleDAO">
+<mapper namespace="com.situ.dao.SaleDAO">
 <select id="query" resultType="map">
     select chc_id,chc_cust_name,chc_title,chc_linkman,chc_tel,chc_create_date from sal_chance
     <where>
@@ -13,6 +13,7 @@
 <if test="chcLinkman !=null and chcLinkman!=''">
     and chc_linkman like concat("%",#{chcLinkman},"%")
 </if>
+and chc_status = 1
     </where>
 </select>
 </mapper>

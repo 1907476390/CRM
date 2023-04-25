@@ -1,14 +1,10 @@
-package com.crm;
+package com.situ;
 
-import com.crm.entity.SalChance;
-import com.crm.service.SaleService;
+import com.situ.entity.SalChance;
+import com.situ.service.SaleService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.sql.Timestamp;
-import java.util.List;
-import java.util.Map;
 
 @SpringBootTest
 class CrmApplicationTests {

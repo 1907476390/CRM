@@ -1,9 +1,10 @@
-package com.crm.dao;
+package com.situ.dao;
 
-import com.crm.entity.SalChance;
+import com.situ.entity.SalChance;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 import java.util.Map;
@@ -42,6 +43,25 @@ public interface SaleDAO {
      */
     @Select("select * from sal_chance where chc_id = #{value}")
     SalChance selSaleById(Integer id);
+
+    /**
+     * 选择指派人
+     * @param salChance
+     * @return
+     */
+    @Update("update sal_chance set chc_due_id = #{chcDueId},chc_due_date = #{chcDueDate},chc_status=2 where chc_id = #{chcId}")
+    int updateMeangers(SalChance salChance);
+
+
+    /**
+     * 修改销售机会
+     * @param salChance
+     * @return
+     */
+    @Update("update sal_chance set chc_source = #{chcSource},chc_cust_name = #{chcCustName}," +
+            "chc_rate = #{chcRate},chc_title=#{chcTitle},chc_linkman=#{chcLinkman}," +
+            "chc_tel = #{chcTel},chc_desc=#{chcDesc} where chc_id = #{chcId}")
+    int updateSale(SalChance salChance);
 
 
 }

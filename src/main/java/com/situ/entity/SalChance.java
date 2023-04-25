@@ -1,4 +1,4 @@
-package com.crm.entity;
+package com.situ.entity;
 
 
 import lombok.Data;
@@ -16,10 +16,10 @@ public class SalChance {
   private String chcDesc;
   private Integer chcCreateId;
   private String chcCreateBy;
-  private java.sql.Timestamp chcCreateDate;
+  private String chcCreateDate;
   private Integer chcDueId;
   private String chcDueTo;
-  private java.sql.Timestamp chcDueDate;
+  private String chcDueDate;
   private String chcStatus;
 
 

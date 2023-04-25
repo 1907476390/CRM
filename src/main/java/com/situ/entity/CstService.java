@@ -1,4 +1,4 @@
-package com.crm.entity;
+package com.situ.entity;
 
 
 public class CstService {
