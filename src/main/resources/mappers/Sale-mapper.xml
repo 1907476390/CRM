@@ -4,13 +4,13 @@
 <select id="query" resultType="map">
     select chc_id,chc_cust_name,chc_title,chc_linkman,chc_tel,chc_create_date from sal_chance
     <where>
-        <if test="chc_cust_name != null and chc_cust_name !=''">
+        <if test="chcCustName != null and chcCustName !=''">
             and chc_cust_name like concat("%",#{chcCustName},"%")
         </if>
-<if test="chc_title !=null and chc_title !=''">
-    and chc_title like concat("%",#{chc_title},"%")
+<if test="chcTitle !=null and chcTitle !=''">
+    and chc_title like concat("%",#{chcTitle},"%")
 </if>
-<if test="chc_linkman !=null and chc_linkman!=''">
+<if test="chcLinkman !=null and chcLinkman!=''">
     and chc_linkman like concat("%",#{chcLinkman},"%")
 </if>
     </where>
