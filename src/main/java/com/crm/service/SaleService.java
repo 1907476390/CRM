@@ -8,4 +8,6 @@ import java.util.Map;
 public interface SaleService {
 
     List<Map> query(SalChance salChance);
+
+    int addSale(SalChance salChance);
 }

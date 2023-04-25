@@ -25,12 +25,30 @@ public class SaleController {
     public Result query(SalChance salChance, @RequestParam(defaultValue = "1") int pageNum,
                         @RequestParam(defaultValue = "4") int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
+
         List<Map> query = service.query(salChance);
+
         PageInfo pageInfo = new PageInfo(query, 4);
+
         Map map = new HashMap();
+
         map.put("query", query);
+
         map.put("pageInfo", pageInfo);
+
         return Result.ok(map);
+    }
+
+    @RequestMapping("/add")
+    public Result add(SalChance salChance){
+
+        int i = service.addSale(salChance);
+
+        if(i > 0){
+            return  Result.ok();
+        }else{
+            return Result.fail("新增失败");
+        }
     }
 
 }

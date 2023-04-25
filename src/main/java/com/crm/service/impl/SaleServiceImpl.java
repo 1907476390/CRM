@@ -23,4 +23,15 @@ public class SaleServiceImpl implements SaleService {
     public List<Map> query(SalChance salChance) {
         return saleDAO.query(salChance);
     }
+
+    /**
+     * 新增销售机会
+     * @param salChance
+     * @return
+     */
+    @Override
+    public int addSale(SalChance salChance) {
+
+        return saleDAO.addSale(salChance);
+    }
 }
